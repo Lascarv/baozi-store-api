@@ -1,5 +1,9 @@
 package com.github.lascarv.baozistoreapi.repository;
 
-public class ProdutoRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.github.lascarv.baozistoreapi.model.Produto;
+
+public interface ProdutoRepository extends JpaRepository<Produto, Long>{
 
 }
