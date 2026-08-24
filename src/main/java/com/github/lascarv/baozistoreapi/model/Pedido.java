@@ -1,5 +1,92 @@
 package com.github.lascarv.baozistoreapi.model;
 
+import java.util.Objects;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "pedido")
 public class Pedido {
 
+
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private Long id;
+	
+	@Column(nullable = false)
+	private Long clienteId;
+	
+	@Column(nullable = false)
+	private Long produtoId;
+	
+	@Column(nullable = false)
+	private Integer quantidade;
+	
+	public Pedido() {
+		
+	}
+	
+	public Pedido(Long clienteId, Long produtoId, Integer quantidade) {
+		this.clienteId = clienteId;
+		this produtoId = produtoId;
+		this.quantidade = quantidade;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public Long getClienteId() {
+		return clienteId;
+	}
+
+	public void setClienteId(Long clienteId) {
+		this.clienteId = clienteId;
+	}
+
+	public Long getProdutoId() {
+		return produtoId;
+	}
+
+	public void setProdutoId(Long produtoId) {
+		this produtoId = produtoId;
+	}
+
+	public Integer getQuantidade() {
+		return quantidade;
+	}
+
+	public void setQuantidade(Integer quantidade) {
+		this.quantidade = quantidade;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(produtoId, clienteId, id, quantidade);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Pedido other = (Pedido) obj;
+		return Objects.equals(produtoId, other.produtoId) && Objects.equals(clienteId, other.clienteId)
+				&& Objects.equals(id, other.id) && Objects.equals(quantidade, other.quantidade);
+	}
+
+	@Override
+	public String toString() {
+		return "Pedido [id=" + id + ", clienteId=" + clienteId + ", produtoId=" + produtoId + ", quantidade="
+				+ quantidade + "]";
+	}
 }
