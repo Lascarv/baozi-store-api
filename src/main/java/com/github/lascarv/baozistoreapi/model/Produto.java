@@ -20,7 +20,11 @@ public class Produto {
 	
 	@Column(nullable = false)
 	private String nome;
+	
+	@Column(nullable = false)
 	private BigDecimal preco;
+	
+	@Column(nullable = false)
 	private Boolean estoque;
 	
 	public Produto() {

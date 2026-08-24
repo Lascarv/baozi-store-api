@@ -34,7 +34,7 @@ public class Pedido {
 	
 	public Pedido(Long clienteId, Long produtoId, Integer quantidade) {
 		this.clienteId = clienteId;
-		this produtoId = produtoId;
+		this.produtoId = produtoId;
 		this.quantidade = quantidade;
 	}
 
@@ -55,7 +55,7 @@ public class Pedido {
 	}
 
 	public void setProdutoId(Long produtoId) {
-		this produtoId = produtoId;
+		this.produtoId = produtoId;
 	}
 
 	public Integer getQuantidade() {

@@ -20,6 +20,8 @@ public class Cliente {
 	
 	@Column(nullable = false)
 	private String nome;
+	
+	@Column(nullable = false)
 	private LocalDate clienteDesde;
 	
 	public Cliente() {
