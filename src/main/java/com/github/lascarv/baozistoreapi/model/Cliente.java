@@ -19,15 +19,15 @@ public class Cliente {
 	private Long id;
 	
 	@Column(nullable = false)
-	private String name;
-	
-	@Column(nullable = false)
+	private String nome;
 	private LocalDate clienteDesde;
 	
-	public Cliente(Long id, String name, LocalDate clienteDesde) {
-		super();
-		this.id = id;
-		this.name = name;
+	public Cliente() {
+		
+	}
+	
+	public Cliente( String nome, LocalDate clienteDesde) {
+		this.nome = nome;
 		this.clienteDesde = clienteDesde;
 	}
 
@@ -35,16 +35,12 @@ public class Cliente {
 		return id;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+	public String getNome() {
+		return nome;
 	}
 
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
 	public LocalDate getClienteDesde() {
@@ -57,7 +53,7 @@ public class Cliente {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(clienteDesde, id, name);
+		return Objects.hash(clienteDesde, id, nome);
 	}
 
 	@Override
@@ -70,14 +66,11 @@ public class Cliente {
 			return false;
 		Cliente other = (Cliente) obj;
 		return Objects.equals(clienteDesde, other.clienteDesde) && Objects.equals(id, other.id)
-				&& Objects.equals(name, other.name);
+				&& Objects.equals(nome, other.nome);
 	}
 
 	@Override
 	public String toString() {
-		return "Cliente [id=" + id + ", name=" + name + ", clienteDesde=" + clienteDesde + "]";
+		return "Cliente [id=" + id + ", nome=" + nome + ", clienteDesde=" + clienteDesde + "]";
 	}
-	
-	
-
 }
