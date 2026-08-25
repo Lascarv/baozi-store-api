@@ -33,6 +33,7 @@ public class PedidoController {
 		return pedidoService.listarPorId(id);
 	}
 	
+	@GetMapping
 	public List<Pedido> listarTodos(){
 		return pedidoService.listarTodos();
 	}
